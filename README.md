@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Global Groove
 
-## Getting Started
+Global Groove is a world music explorer  web application that allows users to discover top songs from around the globe. With a user-friendly interface and integration with the Spotify API, users can explore music from different countries, create playlists, and interact with their favorite songs.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Global Music Discovery:** Explore top songs from various countries by clicking on an interactive globe interface.
+- **Spotify Integration:** Fetch top songs using the Spotify API to provide users with up-to-date music recommendations.
+- **User Authentication:** Sign up for an account to access personalized features such as liking songs and creating playlists.
+- **User Profiles:** View user profiles to see liked songs and playlists.
+- **Playlist Management:** Create and manage playlists with ease.
+- **Admin Dashboard:** Admin users have access to a dashboard to manage user accounts.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. **Explore Music:** Click on any country on the globe to discover its top song.
+2. **Sign Up:** Create an account to access personalized features.
+3. **Like Songs:** Like your favorite songs to add them to your liked list.
+4. **Create Playlists:** Organize your favorite songs into playlists.
+5. **Admin Management:** Admin users can manage user accounts from the admin dashboard.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Installation
 
-## Learn More
+To run the World Music Explorer locally, follow these steps:
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository: `git clone <repository-url>`
+2. Install dependencies: `npm install`
+3. Start the server: `npm start`
+4. Open your browser and navigate to `http://localhost:3000`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technologies Used
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- MongoDB
+- Express.js
+- React.js
+- Node.js
+- Spotify API
 
-## Deploy on Vercel
+## Contributors
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Priyam Desai
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
