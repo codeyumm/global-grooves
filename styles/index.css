@@ -1,0 +1,80 @@
+.hero{
+    display: flex;
+    padding: 60px 140px;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h2{
+    width: 40vw;
+    font-weight: 500;
+    font-size: 52px;
+}
+
+.hero-desc{
+    width: 50vw;
+
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 2;
+}
+
+.left{
+    
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    gap: 12px;
+}
+
+.left button{
+    width: 130px;
+    padding: 8px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: var(--primary-one);
+    color: white;
+    letter-spacing: 1.5px;
+}
+
+.right img{
+    height: 420px;
+    width: 400px;
+}
+
+.highlightBlue{
+    color: var(--primary-two);
+    font-weight: 600;
+}
+
+.siginInText{
+    font-size: 14px;
+    
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.red-star{
+    position: fixed;
+    top: 76%;
+    left: 55%;
+}
+
+.blue-star{
+    position: fixed;
+    top: 140px;
+    left: -54px;
+}
+
+.blue-circle{
+    position: fixed;
+    top: 80%;
+    left: 85%;
+}

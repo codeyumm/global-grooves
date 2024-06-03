@@ -1,0 +1,80 @@
+body{
+    overflow: hidden;
+}
+
+.signup-container{
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.left{
+    background-image: url("/images/gradient-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50vw;
+    height: 100%;
+    color: whitesmoke;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.left h2{
+    font-size: 128px;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 60px;
+}
+
+.right{
+    width: 50vw;
+    color: #003459;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    gap: 6px;
+
+}
+
+input{
+    /* width: 50%; */
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 12px 12px;
+    font-size: 16px;
+    background: rgba(176, 186, 195, 0.4);
+}
+
+.gradBg{
+    background: var(--primary-gradient);
+    padding: 12px 34px;
+    color: white;
+    border-radius: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+ }
+
+.signup-form{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.right h3{
+    font-size: 42px;
+}
