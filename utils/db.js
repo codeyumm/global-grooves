@@ -1,5 +1,6 @@
 // get mongoose
 import mongoose from 'mongoose';
+import 'dotenv/config';
 
 // get db connection string from .env filr
 const MONGODB_URI = process.env.MONGODB_CONNECTON_STRING;
@@ -23,11 +24,13 @@ async function connectToDatabase() {
       return cached.conn;
     }
   
+    // if there is already cached promise 
     if (!cached.promise) {
       const opts = {
         bufferCommands: false,
       };
   
+    
       cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
         return mongoose;
       });

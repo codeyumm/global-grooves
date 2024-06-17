@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-jvectormap/core": "^1.0.4",
+    "@react-jvectormap/world": "^1.1.2",
     "axios": "^1.7.2",
     "bcryptjs": "^2.4.3",
     "cookie": "^0.6.0",
+    "cookies-next": "^4.2.1",
+    "country-json": "^2.2.1",
     "dotenv": "^16.4.5",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.4.1",
