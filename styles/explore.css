@@ -7,6 +7,12 @@
 }
 
 
+h1{
+    text-align: center;
+    color: var(--primary-one);
+}
+
+
 .track-detail-container{
     
     width: max-content;
@@ -15,7 +21,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    max-width: 320px;
+    max-width: 100vw;
     justify-content: center;
     align-items: center;
     gap: 12px;
@@ -28,9 +34,11 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 100px;
 
 }
 
-.explore-container{
-    background-color: var(--primary-one));
+.map{
+    background-color: var(--primary-gradient);
+    padding-bottom: 120px;
 }

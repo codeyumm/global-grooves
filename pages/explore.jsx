@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic'; // Import dynamic from next/dynamic
 import "../styles/global.css"
 import "../styles/explore.css"
 import NavBar from "@/components/navBar/navBar";
+import NavBarExplore from "@/components/navBar/navBarExplore";
 
 const WorldMap = dynamic(() => import('./svgmap'), { ssr: false }); // Import WorldMap dynamically
 
@@ -135,15 +136,17 @@ export default function Explore() {
     return (
         
         <>
-            <NavBar/>
+            {/* <NavBar/> */}
+            <NavBarExplore />
 
             <div className="explore-container">
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <h1>Explore</h1>
-                <button onClick={handleLogout}>Logout</button>
+            <div>
+                <h1>Explore music from world</h1>
             </div>
 
-            <WorldMap onCountryClick={handleCountryClick} />
+            <button onClick={handleLogout}>Logout</button>
+
+            <WorldMap onCountryClick={handleCountryClick}  />
 
             {tracks.length > 0 && (
                 <div>
@@ -158,7 +161,7 @@ export default function Explore() {
                                 <p>Release Date: {track.album.release_date}</p>
                                 <img src={track.album.images[0].url} alt={track.album.name} style={{ width: '100px', height: '100px' }} />
                                 {track.preview_url && (
-                                    <button onClick={() => togglePlayPause(track.preview_url)}>
+                                    <button onClick={() => togglePlayPause(track.preview_url)} className="bgGrad">
                                         {audio && !audio.paused && audio.src === track.preview_url ? 'Pause' : 'Play'}
                                     </button>
                                 )}

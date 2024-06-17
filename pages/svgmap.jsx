@@ -1,6 +1,6 @@
 import { VectorMap } from "@react-jvectormap/core";
 import { worldMill } from "@react-jvectormap/world";
-import { colorScale, countries } from "./Countries";
+import { colorScale, countries } from "../pages/countries";
 import React from "react";
 import countryList from "country-json/src/country-by-abbreviation.json"; // Import countryList
 
@@ -12,7 +12,7 @@ function WorldMap({ onCountryClick }) {
   };
 
   return (
-    <div style={{ margin: "auto", width: "700px", height: "600px" }}>
+    <div style={{ margin: "auto", width: "700px", height: "600px" }} >
       <VectorMap
         map={worldMill}
         containerStyle={{

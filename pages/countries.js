@@ -6,4 +6,4 @@ export const countries = {
 // Remove missingCountries export as it's not required in the current implementation
 
 // Define a single color scale
-export const colorScale = ["#E2AEFF"];
+export const colorScale = ["#29A5D0"];
