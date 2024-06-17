@@ -34,6 +34,8 @@ export default function NavBarExplore() {
 
         <ul>
            <li><Link  className={style.link} href="/about">About</Link></li>
+           <li><Link  className={style.link} href="/">Logout</Link></li>
+
            {/* <button className={`${style.gradBg} ${style.link}` } onClick={handleLogout}>Logout</button> */}
           {/* <li><Link className={`${style.gradBg} ${style.link}` } href="/">Sign up</Link></li> */}
         </ul>

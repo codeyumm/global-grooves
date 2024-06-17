@@ -15,7 +15,8 @@ export default function Explore() {
     const [searchInput, setSearchInput] = useState("");
     const [tracksURL, setTracksURL] = useState("");
     const [tracks, setTracks] = useState([]);
-    const [audio, setAudio] = useState(null); // Audio state for track preview
+    const [audio, setAudio] = useState(null); 
+    const [country, setCountryName] = useState(null);// Audio state for track preview
 
     const handleLogout = async () => {
         try {
@@ -65,6 +66,7 @@ export default function Explore() {
     }, []);
 
     const handleCountryClick = (countryName) => {
+        setCountryName(countryName);
         const searchString = `top 50 ${countryName}`;
         setSearchInput(searchString);
         searchPlaylists(searchString);
@@ -83,12 +85,15 @@ export default function Explore() {
             const response = await fetch(`https://api.spotify.com/v1/search?q=${searchString}&type=playlist&limit=1`, searchParameters);
             if (response.ok) {
                 const data = await response.json();
+                console.log(data);
                 const playlist = data.playlists.items[0];
                 if (playlist) {
                     // Fetch tracks from the playlist
                     const tracksResponse = await fetch(playlist.tracks.href, searchParameters);
                     if (tracksResponse.ok) {
                         const tracksData = await tracksResponse.json();
+                console.log(tracksData);
+                        
                         // Fetch details for each track
                         const trackDetails = await Promise.all(tracksData.items.map(async (item) => {
                             const trackResponse = await fetch(item.track.href, searchParameters);
@@ -144,16 +149,20 @@ export default function Explore() {
                 <h1>Explore music from world</h1>
             </div>
 
-            <button onClick={handleLogout}>Logout</button>
+{/*  -----  */}
+            {/* <button onClick={handleLogout}>Logout</button> */}
 
             <WorldMap onCountryClick={handleCountryClick}  />
 
             {tracks.length > 0 && (
                 <div>
-                    <h2>Top Tracks</h2>
+                    <h2>Top Tracks of {country}</h2>
                   
                   <div className="tracks-container">
-                        {tracks.map(track => (
+                    
+                        {
+                            tracks.map(track => (
+                            
                             <div className="track-detail-container" key={track.id}>
                             
                                 <p>{track.name} by {track.artists.map(artist => artist.name).join(', ')}</p>
@@ -161,7 +170,7 @@ export default function Explore() {
                                 <p>Release Date: {track.album.release_date}</p>
                                 <img src={track.album.images[0].url} alt={track.album.name} style={{ width: '100px', height: '100px' }} />
                                 {track.preview_url && (
-                                    <button onClick={() => togglePlayPause(track.preview_url)} className="bgGrad">
+                                    <button onClick={() => togglePlayPause(track.preview_url)} className="gradBg">
                                         {audio && !audio.paused && audio.src === track.preview_url ? 'Pause' : 'Play'}
                                     </button>
                                 )}

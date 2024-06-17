@@ -38,6 +38,63 @@ h1{
 
 }
 
+
+.tracks-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.track-detail-container {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.track-detail-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.track-detail-container img {
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.track-detail-container p {
+    color: #333;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+
+h2{
+    text-align: center;
+    padding: 24px;
+}
+
+.gradBg{
+    background: black;
+    padding: 12px 34px;
+    color: white;
+    border-radius: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+ }
+
+.bgGrad:hover {
+    background: linear-gradient(135deg, #a777e3, #6e8efb);
+}
+
+
 .map{
     background-color: var(--primary-gradient);
     padding-bottom: 120px;

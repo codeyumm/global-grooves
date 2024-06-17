@@ -79,7 +79,7 @@ export default function Index() {
             </div>
           </form>
 
-          <p className="siginInText">Already have an account? <Link href="/login"><span className="highlightBlue">Log in now!</span></Link></p>
+          <p className="siginInText">Already have an account? <Link href="/signin"><span className="highlightBlue">Log in now!</span></Link></p>
         </div>
       </section>
     </>
