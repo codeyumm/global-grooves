@@ -68,6 +68,7 @@ export default function Explore() {
             const response = await fetch(`https://api.spotify.com/v1/search?q=${searchString}&type=playlist&limit=1`, searchParameters);
             if (response.ok) {
                 const data = await response.json();
+                console.log(data);
                 const playlist = data.playlists.items[0];
                 if (playlist) {
                     const tracksResponse = await fetch(playlist.tracks.href, searchParameters);
