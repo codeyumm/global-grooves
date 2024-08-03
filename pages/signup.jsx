@@ -42,6 +42,8 @@ export default function Index() {
         <div className="left">
           {/* to do add back to home button */}
           {/* <h3>Back to home</h3> */}
+          {/* <Link  className="bgGrad"  href="/about">Bac</Link> */}
+          {/* <img src="/images/back.svg" alt="" className='backBtn' /> */}
           <h2><pre>Global<br />Grooves </pre></h2>
         </div>
 
@@ -79,7 +81,7 @@ export default function Index() {
             </div>
           </form>
 
-          <p className="siginInText">Already have an account? <Link href="/login"><span className="highlightBlue">Log in now!</span></Link></p>
+          <p className="siginInText">Already have an account? <Link href="/signin"><span className="highlightBlue">Log in now!</span></Link></p>
         </div>
       </section>
     </>

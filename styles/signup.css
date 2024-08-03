@@ -11,6 +11,12 @@ body{
     
 }
 
+.backBtn{
+    height: 60px;
+    width: 60px;
+    
+}
+
 .left{
     background-image: url("/images/gradient-bg.png");
     background-repeat: no-repeat;
