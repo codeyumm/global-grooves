@@ -26,4 +26,8 @@ ul{
     flex-wrap: wrap;
 }
 
-
+.earth-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

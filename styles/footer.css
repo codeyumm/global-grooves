@@ -1,50 +1,32 @@
-:root {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
     --primary-one: #F66742;
     --primary-two: #29A5D0;
     --primary-gradient: linear-gradient(220deg, rgba(246,103,66,1) 0%, rgba(41,165,208,1) 100%);
+    --background-light: #f8f9fa;
+    --text-dark: #333;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.2);
+    --white: #fff;
 }
 
-.footer {
-    text-align: center;
-    margin-top: 20px;
-    padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+footer{
+    background-color: var(--primary-two);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    margin-top: 64px;
+    
 }
 
-.footer h2 {
-    color: var(--primary-one);
+footer h3{
+    color: whitesmoke;
 }
 
-.footer-terms {
-    margin-top: 20px;
-    color: #333;
-}
-
-.footer-terms h3 {
-    color: var(--primary-two);
-}
-
-.footer-terms ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-terms li {
-    margin-bottom: 10px;
-}
-
-.footer-terms a {
-    color: var(--primary-one);
-    text-decoration: none;
-}
-
-.footer-terms a:hover {
-    text-decoration: underline;
-}
-
-.footer p {
-    line-height: 1.6;
+footer p{
+    margin-top: 6px;
+    color: lightyellow;
 }

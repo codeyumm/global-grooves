@@ -21,6 +21,7 @@ function GlobeMap({ onCountryClick }) {
 
     root.setThemes([am5themes_Animated.new(root)]);
 
+    // Create a map chart
     let chart = root.container.children.push(
       am5map.MapChart.new(root, {
         projection: am5map.geoOrthographic(),
@@ -36,6 +37,22 @@ function GlobeMap({ onCountryClick }) {
       })
     );
 
+    // Add series for water (ocean)
+    let waterSeries = chart.series.push(
+      am5map.MapPolygonSeries.new(root, {})
+    );
+
+    waterSeries.mapPolygons.template.setAll({
+      fill: am5.color(0x29A5D0), // Light blue for water
+      fillOpacity: 1,
+      strokeOpacity: 0,
+    });
+
+    waterSeries.data.push({
+      geometry: am5map.getGeoRectangle(90, 180, -90, -180),
+    });
+
+    // Add polygon series for countries (land)
     let polygonSeries = chart.series.push(
       am5map.MapPolygonSeries.new(root, {
         geoJSON: am5geodata_worldLow,
@@ -46,14 +63,14 @@ function GlobeMap({ onCountryClick }) {
       tooltipText: "{name}",
       toggleKey: "active",
       interactive: true,
-      stroke: am5.color(0x007EA7),
+      stroke: am5.color(0x000000), // Black borders for clarity
       strokeWidth: 0.5,
-      fill: am5.color(0x7BAFC0),
+      fill: am5.color(0x98FB98), // Pale green for land
       fillOpacity: 1,
     });
 
     polygonSeries.mapPolygons.template.states.create("hover", {
-      fill: am5.color(0xF66742)
+      fill: am5.color(0xF66742), // hover state color
     });
 
     polygonSeries.mapPolygons.template.events.on("click", function (ev) {
@@ -64,18 +81,6 @@ function GlobeMap({ onCountryClick }) {
       } else {
         router.push(`/country/${countryName}`);
       }
-    });
-
-    const backgroundSeries = chart.series.push(
-      am5map.MapPolygonSeries.new(root, {})
-    );
-    backgroundSeries.mapPolygons.template.setAll({
-      fill: root.interfaceColors.get("alternativeBackground"),
-      fillOpacity: 0.1,
-      strokeOpacity: 0,
-    });
-    backgroundSeries.data.push({
-      geometry: am5map.getGeoRectangle(90, 180, -90, -180),
     });
 
     chart.animate({
@@ -91,7 +96,7 @@ function GlobeMap({ onCountryClick }) {
     };
   }, [router]);
 
-  return <div id="chartdiv" style={{ width: "100%", height: "560px" }}></div>;
+  return <div className="earth-container"><div id="chartdiv" style={{ width: "50%", height: "560px" }}></div></div>;
 }
 
 export default GlobeMap;

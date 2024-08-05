@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+import '../styles/global.css';
 
 // Dynamically import the GlobeMap component with SSR disabled
 const GlobeMap = dynamic(() => import('../components/globemap'), {
@@ -7,7 +8,7 @@ const GlobeMap = dynamic(() => import('../components/globemap'), {
 
 export default function MapPage() {
   return (
-    <div>
+    <div className='globe-container'>
       <GlobeMap />
     </div>
   );

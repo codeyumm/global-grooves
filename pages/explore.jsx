@@ -20,6 +20,7 @@ export default function Explore() {
     const [view, setView] = useState('map');
     const [likedTracks, setLikedTracks] = useState(new Set());
     const [country, setCountry] = useState("");
+    const [showHelpModal, setShowHelpModal] = useState(false);
 
     useEffect(() => {
         const fetchAccessToken = async () => {
@@ -143,7 +144,13 @@ export default function Explore() {
         }
     };
 
+    const handleHelpClick = () => {
+        setShowHelpModal(true);
+    };
 
+    const handleCloseModal = () => {
+        setShowHelpModal(false);
+    };
 
     return (
         <>
@@ -152,72 +159,69 @@ export default function Explore() {
             <div className="explore-container">
                 <div className="header">
                     <h1 className="heading">Explore Music from Around the World</h1>
-                   
                 </div>
 
-              
-                    {view === 'map' ? '' :   <button onClick={toggleView} className="toggle-view-button">Back to map</button>}
-                
-
                 {view === 'map' ? (
-                    <GlobeMap onCountryClick={handleCountryClick} />
+                    <>
+                       
+                       <GlobeMap onCountryClick={handleCountryClick} /> 
+                    </>
                 ) : (
-                    <div className="tracks-table-container">
+                    <button onClick={toggleView} className="toggle-view-button">Back to Map</button>
+                )}
+
+                {view === 'table' && (
+                    <div className="tracks-card-container">
                         <h2 className="country-name">Top Tracks of {country}</h2>
-                        <table className="tracks-table">
-                            <thead>
-                                <tr>
-                                    <th>Title</th>
-                                    <th>Artist</th>
-                                    <th>Album</th>
-                                    <th>Date Added</th>
-                                    <th>Duration</th>
-                                    <th>Listen</th>
-                                    <th>Play</th>
-                                    {/* <th>Like</th> */}
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {tracks.map(track => (
-                                    <tr key={track.id}>
-                                        <td className="track-title">
-                                            <img src={track.album.images[2].url} alt={track.album.name} className="album-art" />
-                                            {track.name}
-                                        </td>
-                                        <td>
+                        <div className="tracks-grid">
+                            {tracks.map((track, index) => (
+                                <div key={track.id} className="track-card">
+                                    <div className="track-number">{index + 1}</div>
+                                    <img src={track.album.images[1].url} alt={track.album.name} className="album-art" />
+                                    <div className="track-info">
+                                        <h3 className="track-title">{track.name}</h3>
+                                        <p className="track-artist">
                                             <a href={track.artists[0].external_urls.spotify} target="_blank" rel="noopener noreferrer">
                                                 {track.artists.map(artist => artist.name).join(', ')}
                                             </a>
-                                        </td>
-                                        <td>{track.album.name}</td>
-                                        <td>{track.album.release_date}</td>
-                                        <td>{Math.floor(track.duration_ms / 60000)}:{Math.floor((track.duration_ms % 60000) / 1000).toFixed(0).padStart(2, '0')}</td>
-                                        <td>
-                                            <a href={track.external_urls.spotify} target="_blank" rel="noopener noreferrer">
-                                                Listen on Spotify
-                                            </a>
-                                        </td>
-                                        <td>
-                                            {track.preview_url && (
-                                                <button className="play-button" onClick={() => togglePlayPause(track.id, track.preview_url)}>
-                                                    {playingTrackId === track.id && audio && !audio.paused ? 'Pause' : 'Play'}
-                                                </button>
-                                            )}
-                                        </td>
-                                        {/* <td>
-                                            <button className="like-button" onClick={() => handleLike(track.id)}>
-                                                {likedTracks.has(track.id) ? 'Unlike' : 'Like'}
+                                        </p>
+                                        <p className="track-album">{track.album.name}</p>
+                                        <p className="track-date">{track.album.release_date}</p>
+                                        <p className="track-duration">
+                                            {Math.floor(track.duration_ms / 60000)}:
+                                            {Math.floor((track.duration_ms % 60000) / 1000).toFixed(0).padStart(2, '0')}
+                                        </p>
+                                    </div>
+                                    <div className="track-actions">
+                                        <a href={track.external_urls.spotify} target="_blank" rel="noopener noreferrer" className="listen-link">
+                                            Listen on Spotify
+                                        </a>
+                                        {track.preview_url && (
+                                            <button className="play-button" onClick={() => togglePlayPause(track.id, track.preview_url)}>
+                                                {playingTrackId === track.id && audio && !audio.paused ? 'Pause' : 'Play'}
                                             </button>
-                                        </td> */}
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                                        )}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                <button className="help-button" onClick={handleHelpClick}>?</button>
+
+                {showHelpModal && (
+                    <div className="modal-overlay">
+                        <div className="modal">
+                            <button className="modal-close" onClick={handleCloseModal}>×</button>
+                            <h2>How to Use</h2>
+                            <p>You can rotate the globe with your mouse and zoom in and out using your scroll wheel. Click on any country to view the top songs from that country.</p>
+                        </div>
                     </div>
                 )}
             </div>
 
-            <Footer/>
+            <Footer />
         </>
     );
 }

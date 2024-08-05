@@ -4,64 +4,59 @@
     --primary-one: #F66742;
     --primary-two: #29A5D0;
     --primary-gradient: linear-gradient(220deg, rgba(246,103,66,1) 0%, rgba(41,165,208,1) 100%);
+    --background-light: #f8f9fa;
+    --text-dark: #333;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.2);
+    --white: #fff;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+}
 
-h1{
+h1, h2 {
     text-align: center;
     color: var(--primary-one);
 }
 
-
-.track-detail-container{
-    
-    width: max-content;
+.track-detail-container {
+    width: 100%;
+    max-width: 100vw;
     padding: 24px;
-
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    max-width: 100vw;
     justify-content: center;
     align-items: center;
     gap: 12px;
 }
 
-.tracks-container{
+.tracks-container {
     background-color: var(--primary-two);
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 100px;
-
-}
-
-
-.tracks-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 20px auto;
-    width: 80%;
+    gap: 24px;
+    padding: 20px;
 }
 
 .track-detail-container {
-    background: #f8f9fa;
+    background: var(--white);
     border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    padding: 20px;
     width: 200px;
     text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .track-detail-container:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px var(--shadow-dark);
 }
 
 .track-detail-container img {
@@ -70,156 +65,250 @@ h1{
 }
 
 .track-detail-container p {
-    color: #333;
+    color: var(--text-dark);
     font-size: 14px;
     margin: 5px 0;
 }
 
-
-h2{
-    text-align: center;
-    padding: 24px;
-}
-
-.gradBg{
-    background: black;
+.gradBg {
+    background: var(--primary-gradient);
     padding: 12px 34px;
-    color: white;
+    color: var(--white);
     border-radius: 12px;
     text-transform: uppercase;
     cursor: pointer;
- }
+}
 
-.bgGrad:hover {
+.gradBg:hover {
     background: linear-gradient(135deg, #a777e3, #6e8efb);
 }
 
-
-.map{
+.map {
     background-color: var(--primary-gradient);
     padding-bottom: 120px;
 }
 
-
 .explore-container {
     padding: 20px;
-    font-family: 'Arial, sans-serif';
 }
 
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+    margin: 10px 10px;
+    text-align: center;
 }
 
-.logout-button {
+.logout-button, .toggle-view-button {
     padding: 10px 20px;
-    background-color: #ff4757;
-    color: white;
+    background-color: var(--primary-one);
+    color: var(--white);
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.toggle-view-button {
-    padding: 10px 20px;
-    background: var(--primary-gradient);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.logout-button:hover, .toggle-view-button:hover {
+    background-color: var(--primary-two);
+}
+
+.tracks-card-container {
+    padding: 20px;
+    background: var(--background-light);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px var(--shadow-light);
+}
+
+.country-name {
+    text-align: center;
+    color: var(--primary-one);
     margin-bottom: 20px;
 }
 
-.toggle-view-button:hover {
-    background-color: #0056b3;
+.tracks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-.tracks-table-container {
-    overflow-x: auto;
-}
-
-
-
-.tracks-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+.track-card {
+    background: var(--white);
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px var(--shadow-light);
     overflow: hidden;
-}
-
-.tracks-table th, .tracks-table td {
+    text-align: center;
     padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.tracks-table th {
-    background-color: #f4f4f4;
+.track-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px var(--shadow-dark);
 }
 
-.tracks-table tr:hover {
-    background-color: #f1f1f1;
+.track-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-two);
+    margin-bottom: 10px;
 }
 
-.album-art {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-    vertical-align: middle;
+.track-card img {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.track-info {
+    color: var(--text-dark);
+    margin-bottom: 15px;
 }
 
 .track-title {
-    display: flex;
-    align-items: center;
+    font-size: 16px;
+    color: var(--primary-one);
+    margin: 5px 0;
 }
 
-.play-button {
-    padding: 5px 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.track-artist, .track-album, .track-date, .track-duration {
+    font-size: 14px;
+    margin: 3px 0;
 }
 
-.play-button:hover {
-    background-color: #45a049;
-}
-
-a {
-    color: #007bff;
+.track-artist a {
+    color: var(--primary-two);
     text-decoration: none;
 }
 
-a:hover {
+.track-artist a:hover {
     text-decoration: underline;
 }
 
-
-.country-name{
-    color: var(--primary-one);
-    text-align: center;
+.track-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.heading{
-    text-align: center;
+.listen-link {
+    background: var(--primary-one);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s;
 }
+
+.listen-link:hover {
+    background: #e05a3c;
+}
+
+.play-button {
+    background: var(--primary-two);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.play-button:hover {
+    background: #1a8cff;
+}
+
+
+/* Question mark button */
+.help-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-one);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+.help-button:hover {
+    background-color: #e54b42;
+}
+
+/* Modal overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modal content */
+.modal-content {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+
+.close-button {
+    background: var(--primary-one);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close-button:hover {
+    background: #e54b42;
+}
+
+
+
 
 @media (max-width: 600px) {
-    .tracks-table-container {
-        padding: 0 10px;
+    .tracks-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 
-    .tracks-table th, .tracks-table td {
+    .track-card {
         padding: 10px;
     }
 
-    .album-art {
-        width: 40px;
-        height: 40px;
+    .track-number {
+        font-size: 20px;
+    }
+
+    .track-title {
+        font-size: 14px;
+    }
+
+    .track-info p {
+        font-size: 12px;
     }
 }

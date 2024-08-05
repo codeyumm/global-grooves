@@ -69,7 +69,7 @@ export default function Login() {
               <input type="submit" id="submit" value={"Sign in"} className="gradBg" />
             </div>
           </form>
-          <p className="siginInText">Don't have an account?  <Link href="/signin"><span className="highlightBlue">Sign-up now! </span></Link></p>
+          <p className="siginInText">Don't have an account?  <Link href="/signup"><span className="highlightBlue">Sign-up now! </span></Link></p>
         </div>
       </section>
     </>
