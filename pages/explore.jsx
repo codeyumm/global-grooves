@@ -36,6 +36,9 @@ export default function Explore() {
                 };
 
                 const response = await fetch('https://accounts.spotify.com/api/token', authParameters);
+
+                console.log("response while getting token", response);
+                
                 if (response.ok) {
                     const data = await response.json();
                     setAccessToken(data.access_token);
@@ -75,7 +78,7 @@ export default function Explore() {
             const response = await fetch(`https://api.spotify.com/v1/search?q=${searchString}&type=playlist&limit=1`, searchParameters);
             
             console.log("response-------", response);
-            
+
             if (response.ok) {
                 const data = await response.json();
                 console.log(data);
