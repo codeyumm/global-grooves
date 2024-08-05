@@ -1,8 +1,8 @@
-# World Music Explorer
+# Global Groove
 
-![World Music Explorer](./assets/logo.png)
+![Global Groove](./assets/logo.png)
 
-**World Music Explorer** is a cutting-edge web application designed to bring the world's music to your fingertips. By leveraging the Spotify API, we provide users with a unique experience to explore and discover top music hits from various countries and cultures globally. Whether you’re a music enthusiast or just curious about global music trends, our platform offers an immersive experience like no other.
+**Global Groove** is a cutting-edge web application designed to bring the world's music to your fingertips. By leveraging the Spotify API, we provide users with a unique experience to explore and discover top music hits from various countries and cultures globally. Whether you’re a music enthusiast or just curious about global music trends, our platform offers an immersive experience like no other.
 
 ## Features
 
@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-Explore the live version of World Music Explorer: [World Music Explorer](https://your-live-demo-link.com)
+Explore the live version of Global Groove: [Global Groove](https://your-live-demo-link.com)
 
 ## Screenshots
 
@@ -25,7 +25,7 @@ Explore the live version of World Music Explorer: [World Music Explorer](https:/
 *Explore Page: Click on countries to find top songs.*
 
 ![About Page](./assets/about-page.png)
-*About Page: Learn more about World Music Explorer and its features.*
+*About Page: Learn more about Global Groove and its features.*
 
 ## Technologies Used
 
