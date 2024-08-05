@@ -38,10 +38,13 @@ export default function Explore() {
                 const response = await fetch('https://accounts.spotify.com/api/token', authParameters);
 
                 console.log("response while getting token", response);
-                
+
                 if (response.ok) {
+                    
                     const data = await response.json();
+                    console.log("token", data.access_token);
                     setAccessToken(data.access_token);
+
                 } else {
                     console.error('Failed to fetch access token');
                 }
