@@ -7,7 +7,7 @@ import NavBarExplore from "@/components/navBar/navBarExplore";
 import Footer from "@/components/footer/footer";
 
 // Get the 3D globe
-const GlobeMap = dynamic(() => import('@/pages/svgmap'), { ssr: false });
+const GlobeMap = dynamic(() => import('@/components/globemap'), { ssr: false });
 
 export default function Explore() {
     const router = useRouter();
