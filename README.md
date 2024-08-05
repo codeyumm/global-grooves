@@ -1,43 +1,52 @@
-# Global Groove
+# World Music Explorer
 
-Global Groove is a world music explorer  web application that allows users to discover top songs from around the globe. With a user-friendly interface and integration with the Spotify API, users can explore music from different countries, create playlists, and interact with their favorite songs.
+![World Music Explorer](./assets/logo.png)
+
+**World Music Explorer** is a cutting-edge web application designed to bring the world's music to your fingertips. By leveraging the Spotify API, we provide users with a unique experience to explore and discover top music hits from various countries and cultures globally. Whether you’re a music enthusiast or just curious about global music trends, our platform offers an immersive experience like no other.
 
 ## Features
 
-- **Global Music Discovery:** Explore top songs from various countries by clicking on an interactive globe interface.
-- **Spotify Integration:** Fetch top songs using the Spotify API to provide users with up-to-date music recommendations.
-- **User Authentication:** Sign up for an account to access personalized features such as liking songs and creating playlists.
-- **User Profiles:** View user profiles to see liked songs and playlists.
-- **Playlist Management:** Create and manage playlists with ease.
-- **Admin Dashboard:** Admin users have access to a dashboard to manage user accounts.
+- **Interactive 3D Globe**: Click on any country to discover its top song. Our dynamic globe lets you navigate effortlessly and experience music from around the world.
+- **Personalized Music Experience**: Create an account to unlock features such as liking songs, curating playlists, and sharing music with friends.
+- **Favorite Tracks**: Save songs you love to your personal profile and revisit them anytime.
+- **Custom Playlists**: Build and organize your own playlists with songs from different countries and genres.
+- **Music Sharing**: Easily share your favorite tracks and playlists with friends and family to spread the joy of music.
 
-## Usage
+## Live Demo
 
-1. **Explore Music:** Click on any country on the globe to discover its top song.
-2. **Sign Up:** Create an account to access personalized features.
-3. **Like Songs:** Like your favorite songs to add them to your liked list.
-4. **Create Playlists:** Organize your favorite songs into playlists.
-5. **Admin Management:** Admin users can manage user accounts from the admin dashboard.
+Explore the live version of World Music Explorer: [World Music Explorer](https://your-live-demo-link.com)
 
-## Installation
+## Screenshots
 
-To run the World Music Explorer locally, follow these steps:
+![Home Page](./assets/home-page.png)
+*Home Page: Discover top tracks and explore the globe.*
 
-1. Clone the repository: `git clone <repository-url>`
-2. Install dependencies: `npm install`
-3. Start the server: `npm start`
-4. Open your browser and navigate to `http://localhost:3000`
+![Explore Page](./assets/explore-page.png)
+*Explore Page: Click on countries to find top songs.*
+
+![About Page](./assets/about-page.png)
+*About Page: Learn more about World Music Explorer and its features.*
 
 ## Technologies Used
 
-- MongoDB
-- Express.js
-- React.js
-- Node.js
-- Spotify API
+- **React**: The core library for building the user interface.
+- **Next.js**: Provides server-side rendering and static site generation for improved performance.
+- **Spotify API**: Retrieves global music data for an extensive range of songs.
+- **AmCharts**: Powers the interactive 3D globe visualization.
+- **MongoDB**: Used for storing user profiles and liked songs.
+- **JWT (JSON Web Tokens)**: Manages user authentication and session security.
 
-## Contributors
+## Installation
 
-- Priyam Desai
+### Prerequisites
 
+Ensure you have the following installed:
 
+- Node.js (v14 or later)
+- npm or yarn package manager
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/your-username/world-music-explorer.git
+cd world-music-explorer
