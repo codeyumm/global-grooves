@@ -40,7 +40,7 @@ export default function Explore() {
                 console.log("response while getting token", response);
 
                 if (response.ok) {
-                    
+
                     const data = await response.json();
                     console.log("token", data.access_token);
                     setAccessToken(data.access_token);
@@ -71,9 +71,8 @@ export default function Explore() {
             }
 
         };
-
-        console.log("access token", accessToken);
-
+        
+        console.log("search parameers---", searchParameters);
 
         try {
 
