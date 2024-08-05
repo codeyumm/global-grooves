@@ -63,10 +63,19 @@ export default function Explore() {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${accessToken}`
             }
+
         };
 
+        console.log("access token", accessToken);
+
+
         try {
+
+            console.log(`Fetching playlists with query: ${searchString}`); 
             const response = await fetch(`https://api.spotify.com/v1/search?q=${searchString}&type=playlist&limit=1`, searchParameters);
+            
+            console.log("response-------", response);
+            
             if (response.ok) {
                 const data = await response.json();
                 console.log(data);
@@ -87,6 +96,7 @@ export default function Explore() {
                         setPlayingTrackId(null); // Reset the currently playing track ID
                         setView('table');
                     } else {
+                        console.error('Failed to fetch playlists', response.statusText);
                         console.error('Failed to fetch playlist tracks');
                     }
                 } else {
